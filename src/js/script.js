@@ -1,14 +1,21 @@
-let vinho = prompt("Informe o nome do vinho: ")
-alert("A seguir, veja o nome do vinho no console")
-let tipo = prompt("Informe o tipo do vinho (Tinto, Branco, Rosé): ")
-alert("A seguir, veja o tipo do vinho no console")
-let safra = prompt("Informe a safra do vinho: ")
-alert("A seguir, veja a safra do vinho no console")
-let qnt = prompt("Informe a quantidade do vinho em estoque: ")
-alert("A seguir, veja o a quantidade em estoque do vinho no console")
+function validarTexto(mensagem) {
+  let valor = prompt(mensagem);
 
-alert("Cadastro Realizado! Veja todos os detalhes no console.")
-console.log(`Nome do Vinho: ${vinho}`)
-console.log(`Tipo de Vinho: ${tipo}`)
-console.log(`Ano da Safra: ${safra}`)
-console.log(`Quantidade de Vinho: ${qnt}`)
+  while (valor === null || valor.trim() === "") {
+    alert("Entrada inválida. Digite um valor válido.");
+    valor = prompt(mensagem);
+  }
+  
+  return valor.trim();
+}
+
+function validarNumero(mensagem) {
+  let valor = Number(prompt(mensagem));
+
+  while (isNaN(valor) || valor < 0) {
+    alert("Entrada inválida. Digite um número válido.");
+    valor = Number(prompt(mensagem));
+  }
+
+  return valor;
+}
